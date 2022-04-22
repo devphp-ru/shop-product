@@ -8,10 +8,27 @@ use App\Shop\ShopProduct;
 
 class ShopProductWriter
 {
-    public function write(ShopProduct $product)
+    private array $products = [];
+
+    public function getProducts(): array
     {
-        return "{$product->getTitle()}: "
-            . $product->getFullName()
-            . " ({$product->getPrice()})";
+        return $this->products;
+    }
+
+    public function addProduct(ShopProduct $product): void
+    {
+        $this->products[] = $product;
+    }
+
+    public function write()
+    {
+        $string = '';
+        foreach ($this->getProducts() as $product) {
+            $string .= "{$product->getTitle()}: "
+                . "{$product->getFullName()} "
+                . "({$product->getPrice()})\n";
+        }
+
+        return $string;
     }
 }
