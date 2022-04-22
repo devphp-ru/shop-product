@@ -28,4 +28,11 @@ class CDProduct extends ShopProduct
     {
         return $this->playLength;
     }
+
+    public function getSummaryLine(): string
+    {
+        return parent::getSummaryLine()
+            . " ({$this->getPlayLength()}), "
+            . "price: {$this->getPrice()}";
+    }
 }

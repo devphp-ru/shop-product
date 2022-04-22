@@ -49,4 +49,9 @@ class BookProductTest extends TestCase
         $this->assertNotEquals($this->book->getNumberPages(), 101.01);
         $this->assertNotEquals($this->book->getId(), 101.40);
     }
+
+    public function testGetInfoBookProduct()
+    {
+        $this->assertEquals($this->book->getSummaryLine(), "PHP book: Ivan Nemov (100), price: 1500");
+    }
 }

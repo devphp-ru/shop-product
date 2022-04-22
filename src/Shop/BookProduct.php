@@ -28,4 +28,11 @@ class BookProduct extends ShopProduct
     {
         return $this->numberPages;
     }
+
+    public function getSummaryLine(): string
+    {
+        return parent::getSummaryLine()
+            . " ({$this->getNumberPages()}), "
+            . "price: {$this->getPrice()}";
+    }
 }

@@ -58,4 +58,10 @@ abstract class ShopProduct
     {
         return "{$this->getFirstName()} {$this->getLastName()}";
     }
+
+    public function getSummaryLine(): string
+    {
+        return "{$this->getTitle()}: "
+            . $this->getFullName();
+    }
 }

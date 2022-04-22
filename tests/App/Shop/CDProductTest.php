@@ -49,4 +49,9 @@ class CDProductTest extends TestCase
         $this->assertNotEquals($this->cd->getPlayLength(), 101.01);
         $this->assertNotEquals($this->cd->getId(), 101.40);
     }
+
+    public function testGetInfoBookProduct()
+    {
+        $this->assertEquals($this->cd->getSummaryLine(), "CD title: Ivan Nemov (180), price: 1500");
+    }
 }
