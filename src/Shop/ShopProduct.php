@@ -53,4 +53,9 @@ abstract class ShopProduct
     {
         return $this->price;
     }
+
+    public function getFullName(): string
+    {
+        return "{$this->getFirstName()} {$this->getLastName()}";
+    }
 }
